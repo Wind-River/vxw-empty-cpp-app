@@ -2,19 +2,24 @@
   "_comment": [
      "config.json: For Empty C++ project",
      "Modification History:",
-     "07aug15,ed   Initial version"
+     "18apr16,m_h   Initial version"
      ],
   "icon": "images/workbench-icon_20x20.png",
-  "name": "Empty C++ Project",
+  "name": "C++ Application Template",
   "description":"A starting point for a new C++ project",
   "tags": [
      "vxworks-7"
   ],
   "lang": "C",
   "cmds": {
-    "clone": "mkdir %dest%;cd %dest%;cp -rp %src%/* .;rm ./config.json"
+     "clone":"prjClone.sh -cfg %config% -prj %dest%"
   },
   "doc": "docs/description.md",
   "visibility": "local",
-  "executable": "bin/%projname%"
+  "executable": "bin/%projname%",
+  "type": "application",
+  "project_data": {
+    "init_clone":
+        { "fetch": { "scm":"git", "url":"git@github.com:wind-river-vxworks7/vxw-empty-cpp-app.git" } }
+  }
 }
